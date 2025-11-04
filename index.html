@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <title>No Hi — не починайте з «привіт»</title>
+  <meta name="description" content="Не пишіть просто «привіт». Ставте питання одразу — так швидше для всіх. Приклади, поради, хороші повідомлення." />
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b1220" media="(prefers-color-scheme: dark)">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64'%3E%3Ctext y='50' font-size='50'%3E🚫%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#" class="brand" aria-label="Home">🚫 No Hi</a>
+      <nav class="nav" aria-label="Навігація">
+        <a href="#why" data-i18n="nav.why">Навіщо</a>
+        <a href="#examples" data-i18n="nav.examples">Приклади</a>
+        <a href="#how" data-i18n="nav.how">Як писати</a>
+        <a href="#msg-examples" data-i18n="nav.messages">Приклади повідомлень</a>
+        <a href="#faq" data-i18n="nav.faq">Питання</a>
+
+        <div id="theme-switch" class="theme-switch" role="group" aria-label="Тема" data-i18n="theme.label" data-i18n-attr="aria-label">
+          <button id="theme-light" class="icon-btn" type="button" aria-pressed="false" aria-label="Світла тема" title="Світла тема">🌞</button>
+          <button id="theme-dark" class="icon-btn" type="button" aria-pressed="false" aria-label="Темна тема" title="Темна тема">🌙</button>
+        </div>
+
+        <label class="lang-label">
+          <span class="sr-only" data-i18n="ui.language">Мова</span>
+          <select id="lang-select" aria-label="Мова">
+            <option value="uk">UK</option>
+            <option value="en">EN</option>
+            <option value="es">ES</option>
+            <option value="de">DE</option>
+            <option value="fr">FR</option>
+            <option value="pl">PL</option>
+            <option value="pt">PT</option>
+          </select>
+        </label>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h1 class="hero-title">
+        <span data-i18n="hero.prefix">Не починайте з</span>
+        <span class="typewrap" aria-hidden="true">
+          <span id="rotating" class="typed">привіт</span>
+          <span class="caret" aria-hidden="true"></span>
+        </span>
+      </h1>
+      <p class="lead" data-i18n="hero.tagline">Одразу пишіть суть — так швидше для всіх.</p>
+      <p class="sr-only" id="hero-sr" data-i18n="hero.sr">Не починайте з привіт — одразу ставте питання.</p>
+    </section>
+
+    <section id="why">
+      <h2 data-i18n="why.title">Чому не варто писати просто «привіт»</h2>
+      <ul class="points">
+        <li data-i18n="why.p1">«Привіт» без контексту зупиняє діалог: співрозмовник чекає деталей, а ви — відповіді.</li>
+        <li data-i18n="why.p2">Менше уточнень — більше результату.</li>
+        <li data-i18n="why.p3">Можна відповісти асинхронно, коли зручно.</li>
+      </ul>
+    </section>
+
+    <section id="examples">
+      <h2 data-i18n="examples.title">Приклади</h2>
+      <div class="cols">
+        <article class="panel bad">
+          <h3 data-i18n="examples.badTitle">Погано</h3>
+          <ul class="chat">
+            <li class="row">
+              <img class="avatar" src="img/avatar/you.png" alt="Оля" width="36" height="36" loading="lazy" data-i18n="names.you" data-i18n-attr="alt">
+              <div class="bubble you">
+                <strong data-i18n="names.you">Оля</strong><span>:</span>
+                <span class="incomplete" data-i18n="examples.bad1" title="Додайте, будь ласка, суть повідомлення">Привіт</span>
+              </div>
+            </li>
+            <li class="row">
+              <img class="avatar" src="img/avatar/other.png" alt="Богдан" width="36" height="36" loading="lazy" data-i18n="names.them" data-i18n-attr="alt">
+              <div class="bubble them">
+                <strong data-i18n="names.them">Богдан</strong><span>:</span>
+                <span data-i18n="examples.bad2">Привіт! 👋</span>
+              </div>
+            </li>
+            <li class="row">
+              <img class="avatar" src="img/avatar/you.png" alt="Оля" width="36" height="36" loading="lazy" data-i18n="names.you" data-i18n-attr="alt">
+              <div class="bubble you">
+                <strong data-i18n="names.you">Оля</strong><span>:</span>
+                <span data-i18n="examples.bad3">Є хвилинка?</span>
+              </div>
+            </li>
+            <li class="row">
+              <div class="muted" data-i18n="examples.bad4">…час минає, контексту немає…</div>
+            </li>
+          </ul>
+        </article>
+
+        <article class="panel good">
+          <h3 data-i18n="examples.goodTitle">Краще</h3>
+          <ul class="chat">
+            <li class="row">
+              <img class="avatar" src="img/avatar/you.png" alt="Оля" width="36" height="36" loading="lazy" data-i18n="names.you" data-i18n-attr="alt">
+              <div class="bubble you">
+                <strong data-i18n="names.you">Оля</strong><span>:</span>
+                <span data-i18n="examples.good1">Привіт! Потрібна допомога: збірка падає на кроці тестів. Пробував(ла) чистити кеш і перезапускати. Лог: посилання.</span>
+              </div>
+            </li>
+            <li class="row">
+              <img class="avatar" src="img/avatar/other.png" alt="Богдан" width="36" height="36" loading="lazy" data-i18n="names.them" data-i18n-attr="alt">
+              <div class="bubble them">
+                <strong data-i18n="names.them">Богдан</strong><span>:</span>
+                <span data-i18n="examples.good2">Ок — перегляну після дзвінка і відпишусь.</span>
+              </div>
+            </li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="how">
+      <h2 data-i18n="how.title">Як написати повідомлення</h2>
+      <ol class="steps">
+        <li data-i18n="how.s1">1–2 речення про задачу та мету.</li>
+        <li data-i18n="how.s2">Що вже пробували: кроки/команди, текст помилки, версії, посилання/скріни.</li>
+        <li data-i18n="how.s3">Очікуваний результат і орієнтир у часі.</li>
+      </ol>
+    </section>
+
+    <section id="msg-examples">
+      <h2 data-i18n="messages.title">Приклади повідомлень</h2>
+      <div class="cards">
+        <article class="card"><p data-i18n="messages.e1">Привіт, як ся маєш? Чи не підкажеш, до якого терміну це треба буде зробити?</p></article>
+        <article class="card"><p data-i18n="messages.e2">Привіт! Сподіваюся, у тебе все добре. Мені потрібно обговорити наступний реліз, коли в тебе буде хвилинка 🙂</p></article>
+        <article class="card"><p data-i18n="messages.e3">Хай, якщо не зайнятий, не міг би ти оновити інструкцію по деплою?</p></article>
+        <article class="card"><p data-i18n="messages.e4">Доброго дня! Чи зможеш сьогодні переглянути лог білду? Падає на кроці тестів, посилання на лог всередині.</p></article>
+        <article class="card"><p data-i18n="messages.e5">Будь ласка, глянь мій PR #123 (валідація форм). Особливо цікавить продуктивність і i18n.</p></article>
+        <article class="card"><p data-i18n="messages.e6">Маєш можливість підказати, хто відповідає за модуль платежів? Потрібна консультація щодо webhooks.</p></article>
+      </div>
+    </section>
+
+    <section id="faq">
+      <h2 data-i18n="faq.title">Питання</h2>
+      <details>
+        <summary data-i18n="faq.q1">Це неввічливо?</summary>
+        <p data-i18n="faq.a1">Будьте ввічливими і конкретними: «Привіт! Можеш допомогти з …? Контекст: …».</p>
+      </details>
+      <details>
+        <summary data-i18n="faq.q2">А якщо спершу треба спитати, чи зручно?</summary>
+        <p data-i18n="faq.a2">Надішліть питання і додайте: «коли буде зручно, глянь, будь ласка» — людина відповість, коли зможе.</p>
+      </details>
+      <details>
+        <summary data-i18n="faq.q3">А якщо тема особиста?</summary>
+        <p data-i18n="faq.a3">Коротко позначте тему і запропонуйте дзвінок: «Привіт! Є особисте питання про … — зручно сьогодні поговорити?»</p>
+      </details>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p class="footnote" data-i18n="footer.note">Зроблено з повагою до часу — вашого і чужого.</p>
+      <p class="footnote">
+        <span data-i18n="footer.credit">Розроблен Suff1XXX. Відкритий код на GitHub.</span>
+        <a id="gh-link" href="https://github.com/Suff1XXX/nohi" target="_blank" rel="noopener noreferrer" aria-label="GitHub">GitHub</a>
+      </p>
+      <p class="footnote warn" data-i18n="footer.warn">Якщо ви побачите URL цього сайту в чиємусь статусі/біо, будьте готові, що вас проігнорують, якщо напишете лише «Привіт!».</p>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
